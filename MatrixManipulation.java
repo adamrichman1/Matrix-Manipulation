@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class MatrixManipulation {
 	
-	public Double[][] invert(Double[][] original) throws IOException {
+	public static Double[][] invert(Double[][] original) throws IOException {
 		
 		//obtain the determinant
 		Double determinant = getDeterminant(original);
@@ -56,7 +56,7 @@ public class MatrixManipulation {
 		return inverted;
 	}
 	
-	public Double getDeterminant(Double[][] original) throws IOException {
+	public static Double getDeterminant(Double[][] original) throws IOException {
 		
 		//declare a Double variable determinant and initialize it to 0.0
 		Double determinant = 0.0;
@@ -65,10 +65,8 @@ public class MatrixManipulation {
 			//base case (when a 2x2 matrix is passed in)
 			return original[0][0]*original[1][1] - original[0][1]*original[1][0];
 		}
-		else if (original.length < 2 || original[0].length < 2) {
-			
+		else if (original.length < 2 || original[0].length < 2)
 			throw new IOException("Dimensions of matrix must be at least 2x2");
-		}
 		else {
 			//recursive case
 			//declare an integer variable and initialize it to 1
@@ -102,7 +100,7 @@ public class MatrixManipulation {
 	}
 
 	
-	public Double[][] transpose(Double[][] original) {
+	public static Double[][] transpose(Double[][] original) {
 		//declare a new 2D Double array
 		Double[][] inverted = new Double[original.length][original[0].length];
 		
